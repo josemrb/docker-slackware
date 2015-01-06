@@ -19,7 +19,7 @@ RUN \
 	mysql_install_db --user=mysql && \
 	chown -R mysql:mysql /var/lib/mysql
 
-# update script | enable networking | add exec | run in foreground 
+# update slackware script | enable networking | add exec to the call | remove ampersand to run the cmd in foreground 
 RUN \
 	sed -i 's/^SKIP.*/#&/g' /etc/rc.d/rc.mysqld && \
 	sed -i 's/\/usr\/bin\/mysqld_safe.*\&$/exec &/g' /etc/rc.d/rc.mysqld && \
